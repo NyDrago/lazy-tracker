@@ -17,5 +17,7 @@ super duper optimized 2.8 kbs python script to make your wallpaper track your mo
 ## setup
 1. dump your animation frames into a directory. (use numbers or abcs to sort them. frame_001.png frame_002.png etc work best though. **also if youre going to double digits you must use 00 01 02 all the way till ten NOT 1 2 3 4 5... 10)**
 2. open `temperantLazyTracker.py` and set your path
-3. make sure your script opens with startup. (run in with python, like **python ~/temperantLazyTracker.py**) make sure you change it to your actual directory tho
+3. change the screen width if needed in that same file
+4. make sure your script opens with startup. (run in with python, like **python ~/temperantLazyTracker.py**) make sure you change it to your actual directory tho
+5. IGNORE THIS IF YOURE ON NOT HYPRLAND make sure aww-daemon also runs on startup in your hyprland file.
 
