@@ -21,3 +21,4 @@ super duper optimized 2.8 kbs python script to make your wallpaper track your mo
 4. make sure your script opens with startup. (run in with python, like **python ~/temperantLazyTracker.py**) make sure you change it to your actual directory tho
 5. IGNORE THIS IF YOURE NOT ON HYPRLAND make sure awww-daemon also runs on startup in your hyprland file.
 
+i have NO idea how much DEs this works on. so far ive tested on hyprland, xfce, lxqt and they worked. but this is originally made for hyprland so dont expect it to work well elsewhere.. (if youre de cannot switch wallpapers quickly like on lxqt. try to get a different wallpaper manager or else itll be laggy. )
