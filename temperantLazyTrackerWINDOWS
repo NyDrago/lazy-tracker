@@ -1,0 +1,53 @@
+#!/usr/bin/env python3
+# MADE BY TEMPERANCE!! (github.com/nydrago || nydrago on discord)
+# MIT License - Copyright (c) 2026 TEMPERANCE
+import os
+import time
+import ctypes
+import ctypes.wintypes
+import win32gui
+import win32con
+
+frame_dir = r"C:\Users\lold\Desktop\mio_frames"
+last_frame_idx = -1
+
+user32 = ctypes.windll.user32
+screen_width = user32.GetSystemMetrics(0)
+
+def get_sorted_frames():
+    try:
+        return sorted([
+            os.path.join(frame_dir, f)
+            for f in os.listdir(frame_dir)
+            if f.lower().endswith((".png", ".jpg", ".jpeg"))
+        ])
+    except:
+        return []
+
+def get_mouse_x():
+    pt = ctypes.wintypes.POINT()
+    user32.GetCursorPos(ctypes.byref(pt))
+    return pt.x
+
+def apply_wallpaper(frame_path):
+    win32gui.SystemParametersInfo(win32con.SPI_SETDESKWALLPAPER, os.path.abspath(frame_path), 1 | 2)
+
+frames = get_sorted_frames()
+total_frames = len(frames)
+
+while True:
+    if total_frames == 0:
+        time.sleep(1)
+        frames = get_sorted_frames()
+        total_frames = len(frames)
+        continue
+
+    mx = get_mouse_x()
+    mx = max(0, min(mx, screen_width - 1))
+    frame_idx = int((mx / screen_width) * total_frames)
+
+    if frame_idx != last_frame_idx:
+        apply_wallpaper(frames[frame_idx])
+        last_frame_idx = frame_idx
+
+    time.sleep(0.016)
