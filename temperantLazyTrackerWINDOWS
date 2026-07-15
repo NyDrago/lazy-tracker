@@ -8,7 +8,7 @@ import ctypes.wintypes
 import win32gui
 import win32con
 
-frame_dir = r"C:\Users\lold\Desktop\mio_frames"
+frame_dir = r"C:\Users\user\Desktop\mio_frames"
 last_frame_idx = -1
 
 user32 = ctypes.windll.user32
